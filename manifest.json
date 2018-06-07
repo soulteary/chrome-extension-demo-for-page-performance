@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "page-images-scanner",
+  "description": "collect page images",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "images.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "js/content.js"
+      ],
+      "matches": [
+        "http://*.soulteary.com/*",
+        "https://*.soulteary.com/*"
+      ],
+      "all_frames": true,
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "*://*/*",
+    "tabs"
+  ]
+}
